@@ -1,0 +1,23 @@
+info:
+  name: Update Driver
+  type: http
+  seq: 1
+
+http:
+  method: PUT
+  url: http://127.0.0.1:5000/drivers/1
+  body:
+    type: json
+    data: |-
+      {
+        "name": "James Driver",
+        "license_type": "Class A",
+        "vehicle_id": 1
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

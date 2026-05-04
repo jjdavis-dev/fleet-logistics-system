@@ -1,0 +1,23 @@
+info:
+  name: Create Package
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://127.0.0.1:5000/packages/
+  body:
+    type: json
+    data: |-
+      {
+        "description": "Electronics box",
+        "weight": 12.5,
+        "route_id": 1
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

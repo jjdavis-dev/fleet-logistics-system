@@ -1,0 +1,23 @@
+info:
+  name: Update Package
+  type: http
+  seq: 1
+
+http:
+  method: PUT
+  url: http://127.0.0.1:5000/packages/1
+  body:
+    type: json
+    data: |-
+      {
+        "description": "Updated electronics box",
+        "weight": 15.75,
+        "route_id": 1
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,23 @@
+info:
+  name: Create Route
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://127.0.0.1:5000/routes/
+  body:
+    type: json
+    data: |-
+      {
+        "route_date": "2026-05-03",
+        "service_zone": "North Zone",
+        "driver_id": 2
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

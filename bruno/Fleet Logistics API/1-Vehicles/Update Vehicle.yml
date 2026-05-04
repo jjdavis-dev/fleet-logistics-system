@@ -1,0 +1,22 @@
+info:
+  name: Update Vehicle
+  type: http
+  seq: 1
+
+http:
+  method: PUT
+  url: http://127.0.0.1:5000/vehicles/1
+  body:
+    type: json
+    data: |-
+      {
+        "license_plate": "XYZ999",
+        "model": "Mercedes Sprinter"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

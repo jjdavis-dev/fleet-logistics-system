@@ -1,0 +1,23 @@
+info:
+  name: Create Driver
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://127.0.0.1:5000/drivers/
+  body:
+    type: json
+    data: |-
+      {
+        "name": "John Driver",
+        "license_type": "Class B",
+        "vehicle_id": 1
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
