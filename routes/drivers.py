@@ -20,9 +20,9 @@ def create_driver():
     conn = get_connection()
     cur = conn.cursor()
     cur.execute("""
-        insert into drivers (name, license_type, vehicle_id)
-        values (%s, %s, %s)
-    """, (data["name"], data["license_type"], data["vehicle_id"]))
+        insert into drivers (name, license_type)
+        values (%s, %s)
+    """, (data["name"], data["license_type"]))
     conn.commit()
     cur.close()
     conn.close()
@@ -35,9 +35,9 @@ def update_driver(id):
     cur = conn.cursor()
     cur.execute("""
         update drivers
-        set name = %s, license_type = %s, vehicle_id = %s
+        set name = %s, license_type = %s
         where driver_id = %s
-    """, (data["name"], data["license_type"], data["vehicle_id"], id))
+    """, (data["name"], data["license_type"], id))
     conn.commit()
     cur.close()
     conn.close()
