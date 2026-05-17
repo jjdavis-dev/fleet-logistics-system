@@ -9,7 +9,7 @@ from routes.packages import packages
 init_db()
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins="*")
 
 app.register_blueprint(vehicles, url_prefix="/vehicles")
 app.register_blueprint(drivers, url_prefix="/drivers")
