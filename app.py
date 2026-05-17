@@ -1,5 +1,5 @@
 from flask_cors import CORS
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 from database import init_db
 from routes.vehicles import vehicles
 from routes.drivers import drivers
@@ -18,8 +18,8 @@ app.register_blueprint(packages, url_prefix="/packages")
 
 
 @app.route("/")
-def home():
-    return jsonify({"message": "Server Online"})
+def index():
+    return render_template("index.html")
 
 
 if __name__ == "__main__":
